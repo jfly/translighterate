@@ -1,5 +1,5 @@
 class Translighterate
-  def self.hi
-    puts "Hello world"
+  def self.one
+    1
   end
 end

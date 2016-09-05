@@ -9,4 +9,6 @@ Gem::Specification.new do |s|
   s.files = ["lib/translighterate.rb"]
   s.homepage = 'https://github.com/jfly/translighterate'
   s.license = 'MIT'
+
+  s.add_development_dependency "rspec"
 end
