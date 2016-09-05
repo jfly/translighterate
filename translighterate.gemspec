@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'translighterate'
-  s.version = '0.0.2'
+  s.version = '0.0.3'
   s.date = '2016-09-04'
   s.summary = "A version of Rails's highlight that is transliteration aware."
   s.description = "For example, highlighting 'duss' in 'Düsseldorf' will actually match something."
