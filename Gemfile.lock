@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     translighterate (0.0.1)
-      actionview
+      actionview (~> 5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -59,9 +59,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
-  rake
-  rspec
+  byebug (~> 9.0)
+  rake (~> 11.2)
+  rspec (~> 3.5)
   translighterate!
 
 BUNDLED WITH
