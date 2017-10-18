@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/jfly/translighterate'
   s.license = 'MIT'
 
-  s.add_dependency "actionview", "~> 4.2"
+  s.add_dependency "actionview", ">= 4.0", "< 6.0"
 
   s.add_development_dependency "rspec", "~> 3.5"
   s.add_development_dependency "byebug", "~> 9.0"
