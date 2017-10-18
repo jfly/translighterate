@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    translighterate (0.0.3)
+    translighterate (0.1.0)
       actionview (>= 4)
 
 GEM

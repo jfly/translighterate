@@ -31,4 +31,6 @@ irb(main):005:0> highlight("Düsseldorf", "duss")
 - `bin/rspec`
 
 ## Publishing to Rubygems
+- Update `s.version` and `s.date` in `translighterate.gemspec` and commit.
+- `git tag $(sed -n "s/^ *s.version = '\(.*\)'/v\1/p" translighterate.gemspec)` - Tag commit.
 - `gem push translighterate-X.Y.Z.gem`
