@@ -28,7 +28,7 @@ irb(main):005:0> highlight("Düsseldorf", "duss")
 - `gem build translighterate.gemspec`
 
 ## Testing
-- `bundle exec rake`
+- `bin/rspec`
 
 ## Publishing to Rubygems
 - `gem push translighterate-X.Y.Z.gem`
