@@ -17,6 +17,8 @@ class Translighterate
       # Transliteration trick from:
       #  https://github.com/cubing/worldcubeassociation.org/issues/238#issuecomment-234702800
       transliterated = text.mb_chars.normalize(:kd).gsub(/[\p{Mn}]/,'').to_s
+      transliterated = transliterated.gsub "ł", "l"
+      transliterated = transliterated.gsub "Ł", "L"
 
       previous_match_end_index = 0
       result = ""

@@ -5,9 +5,22 @@ describe Translighterate do
     expect(Translighterate.highlight("Dusseldorf", "duss")).to eq "<mark>Duss</mark>eldorf"
   end
 
-  it "ignores diacritics" do
-    expect(Translighterate.highlight("Düsseldorf düsseldorf", "duss")).to eq "<mark>Düss</mark>eldorf <mark>düss</mark>eldorf"
-    expect(Translighterate.highlight("pędzić", "pedzic")).to eq "<mark>pędzić</mark>"
+  describe "ignores diacritics" do
+    it "ü" do
+      expect(Translighterate.highlight("Düsseldorf düsseldorf", "duss")).to eq "<mark>Düss</mark>eldorf <mark>düss</mark>eldorf"
+    end
+
+    it "ę" do
+      expect(Translighterate.highlight("pędzić", "pedzic")).to eq "<mark>pędzić</mark>"
+    end
+
+    it "ș" do
+      expect(Translighterate.highlight("Chișinău", "isi")).to eq "Ch<mark>iși</mark>nău"
+    end
+
+    it "ł" do
+      expect(Translighterate.highlight("Jonatan Kłosko", "klo")).to eq "Jonatan <mark>Kło</mark>sko"
+    end
   end
 
   it "preserves special characters" do
