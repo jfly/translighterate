@@ -1,7 +1,8 @@
+require "translighterate/version"
 require 'action_view'
 include ActionView::Helpers::TextHelper
 
-class Translighterate
+module Translighterate
   # Copied (and modified!) from
   #  https://github.com/rails/rails/blob/495ef4124e292dcc7062e3e1f04f623053113101/actionview/lib/action_view/helpers/text_helper.rb#L130
   def self.highlight(text, phrases, options = {})
