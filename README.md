@@ -1,4 +1,4 @@
-# Translighterate
+# translighterate = transliterate + highlight [![Build Status](https://travis-ci.org/jfly/translighterate.svg?branch=master)](https://travis-ci.org/jfly/translighterate)
 
 (Created after getting no responses to this [Stack Overflow question](http://stackoverflow.com/questions/34166987/rails-gem-for-transliterate-highlight).)
 
