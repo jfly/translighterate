@@ -9,7 +9,7 @@ For example, highlighting 'duss' in 'Düsseldorf' will actually match something:
 ```ruby
 irb(main):001:0> require 'translighterate'
 => true
-irb(main):002:0> Translighterate::highlight("Düsseldorf", "duss")
+irb(main):002:0> Translighterate.highlight("Düsseldorf", "duss")
 => "<mark>Düss</mark>eldorf"
 ```
 
@@ -47,7 +47,7 @@ We have one class `Translighterate` with one method `highlight`.
 ```ruby
 irb(main):001:0> require 'translighterate'
 => true
-irb(main):002:0> Translighterate::highlight("Düsseldorf", "duss")
+irb(main):002:0> Translighterate.highlight("Düsseldorf", "duss")
 => "<mark>Düss</mark>eldorf"
 ```
 
