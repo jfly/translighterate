@@ -36,6 +36,10 @@ RSpec.describe Translighterate do
     expect(Translighterate.highlight("Yu Nakajima (中島悠)", "中")).to eq "Yu Nakajima (<mark>中</mark>島悠)"
   end
 
+  it "handles characters whose kd normalization form is multiple spacing marks" do
+    expect(Translighterate.highlight("이 wins", "wins")).to eq "이 <mark>wins</mark>"
+  end
+
   context "when a regexp is given" do
     it "highlights everything matching it" do
       expect(Translighterate.highlight("Yu Nakajima (中島悠)", /(中|(y.))/i)).to eq "<mark>Yu</mark> Nakajima (<mark>中</mark>島悠)"

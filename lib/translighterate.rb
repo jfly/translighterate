@@ -17,9 +17,7 @@ module Translighterate
 
       # Transliteration trick from:
       #  https://github.com/cubing/worldcubeassociation.org/issues/238#issuecomment-234702800
-      transliterated = text.mb_chars.normalize(:kd).gsub(/[\p{Mn}]/,'').to_s
-      transliterated = transliterated.gsub "ł", "l"
-      transliterated = transliterated.gsub "Ł", "L"
+      transliterated = text.chars.map { |ch| transliterate_char(ch) }.join
 
       previous_match_end_index = 0
       result = ""
@@ -39,4 +37,21 @@ module Translighterate
       result += text[previous_match_end_index..-1]
     end.html_safe
   end
+end
+
+def transliterate_char(ch)
+  raise if ch.length != 1
+
+  mappings = {
+    "ł" => "l",
+    "Ł" => "L",
+  }
+
+  ch = if mappings.key?(ch)
+         mappings[ch]
+       else
+         ch.mb_chars.normalize(:kd).gsub(/[\p{Mn}]/, '').normalize(:c).to_s
+       end
+  raise if ch.length != 1
+  ch
 end
