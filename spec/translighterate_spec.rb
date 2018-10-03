@@ -30,10 +30,12 @@ RSpec.describe Translighterate do
   it "preserves special characters" do
     expect(Translighterate.highlight("Yu Nakajima (中島悠)", "yu")).to eq "<mark>Yu</mark> Nakajima (中島悠)"
     expect(Translighterate.highlight("zasięg", "something else")).to eq "zasięg"
+    expect(Translighterate.highlight("Piti Pichedpan (ปิติ พิเชษฐพันธ์)", "piti")).to eq "<mark>Piti</mark> Pichedpan (ปิติ พิเชษฐพันธ์)"
   end
 
   it "matches special characters" do
     expect(Translighterate.highlight("Yu Nakajima (中島悠)", "中")).to eq "Yu Nakajima (<mark>中</mark>島悠)"
+    expect(Translighterate.highlight("Piti Pichedpan (ปิติ พิเชษฐพันธ์)", "ติ")).to eq "Piti Pichedpan (ปิ<mark>ติ</mark> พิเชษฐพันธ์)"
   end
 
   it "handles characters whose kd normalization form is multiple spacing marks" do

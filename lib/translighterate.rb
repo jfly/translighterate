@@ -41,6 +41,7 @@ end
 
 def transliterate_char(ch)
   raise if ch.length != 1
+  original_char = ch
 
   mappings = {
     "ł" => "l",
@@ -52,6 +53,9 @@ def transliterate_char(ch)
        else
          ch.mb_chars.normalize(:kd).gsub(/[\p{Mn}]/, '').normalize(:c).to_s
        end
-  raise if ch.length != 1
-  ch
+  if ch.length != 1
+    original_char
+  else
+    ch
+  end
 end
