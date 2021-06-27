@@ -51,7 +51,7 @@ def transliterate_char(ch)
   ch = if mappings.key?(ch)
          mappings[ch]
        else
-         ch.mb_chars.normalize(:kd).gsub(/[\p{Mn}]/, '').normalize(:c).to_s
+         ch.mb_chars.unicode_normalize(:nfkd).gsub(/[\p{Mn}]/, '').unicode_normalize(:nfc).to_s
        end
   if ch.length != 1
     original_char
